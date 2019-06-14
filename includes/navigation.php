@@ -46,5 +46,13 @@
             <li ><a href = 'logout.php' class='button large fit' > Log Out </a ></li >
         </ul >
     </section>
-
+    <?php
+    $user_ip = $_SERVER['REMOTE_ADDR'];
+    if($user_ip == "::1" || $user_ip == "127.0.0.1"){
+        echo "
+        <ul class='actions stacked' >
+            <li ><a href = 'debug.php' class='button large fit' > Session Debugging </a ></li >
+        </ul>";
+    }
+    ?>
 </section>
