@@ -6,12 +6,12 @@ global $logo;
 if(isset($_SESSION['status'])){
     $user_status = $_SESSION['status'];
     if($user_status == "premium"){
-        $logo = "images/BacktestOnline Premium.png";
+        $logo = "/images/BacktestOnline Premium.png";
     }else if($user_status == "free"){
-        $logo = "images/BacktestOnline Free.png";
+        $logo = "/images/BacktestOnline Free.png";
     }
 }else{
-    $logo = "images/BacktestOnline Web.png";
+    $logo = "/images/BacktestOnline Web.png";
 }
 
 //echo $logo
