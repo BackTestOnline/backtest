@@ -3613,3 +3613,7 @@ input, select, textarea {
 #message{
 	color: red;
 }
+
+#wrapper{
+	background: white
+}

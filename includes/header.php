@@ -3,6 +3,9 @@ include "db.php";
 include "functions.php";
 session_start();
 $root = "/";
+
+//set logo depending on user account type
+
 ?>
 <!DOCTYPE HTML>
 <!--

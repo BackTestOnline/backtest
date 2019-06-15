@@ -1,14 +1,30 @@
 </div>
 
+<?php
+
+global $logo;
+if(isset($_SESSION['status'])){
+    $user_status = $_SESSION['status'];
+    if($user_status == "premium"){
+        $logo = "images/BacktestOnline Premium.png";
+    }else if($user_status == "free"){
+        $logo = "images/BacktestOnline Free.png";
+    }
+}else{
+    $logo = "images/BacktestOnline Web.png";
+}
+
+//echo $logo
+?>
 
 <!-- Sidebar -->
 <section id="sidebar">
 
     <!-- Intro -->
     <section id="intro">
-        <a href="#" class="logo"><img src="images/logo.jpg" alt="" /></a>
+        <a href="#"><img src="<?php echo $logo;?>" alt="" style="width: 340px"></a>
         <header>
-            <h2>Backtest Online</h2>
+<!--            <h2>Backtest Online</h2>-->
             <h3>Home of the B.O.S.S. Software</h3>
         </header>
     </section>
