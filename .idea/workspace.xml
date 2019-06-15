@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6969567-54e4-4e5d-9f5e-dd853d0790c5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/images/BacktestOnline Free.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/BacktestOnline Premium.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/BacktestOnline web.PNG" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,8 +73,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/includes/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+            <state relative-caret-position="102">
+              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#section#0;n#section#0;n#!!top" expanded="true" />
               </folding>
@@ -92,6 +96,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
               <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
+              <folding>
+                <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,7 +138,6 @@
         <option value="$PROJECT_DIR$/signup.php" />
         <option value="$PROJECT_DIR$/admin/includes/admin_header.php" />
         <option value="$PROJECT_DIR$/admin/includes/footer.php" />
-        <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/admin/includes/header.php" />
         <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/index.php" />
@@ -132,6 +147,7 @@
         <option value="$PROJECT_DIR$/admin/index.php" />
         <option value="$PROJECT_DIR$/includes/header.php" />
         <option value="$PROJECT_DIR$/assets/css/main.css" />
+        <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/includes/footer.php" />
       </list>
     </option>
@@ -237,12 +253,12 @@
       <updated>1560333262112</updated>
       <workItem from="1560333263440" duration="10869000" />
       <workItem from="1560547942817" duration="44000" />
-      <workItem from="1560584006796" duration="10711000" />
+      <workItem from="1560584006796" duration="11423000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24429000" />
+    <option name="totallyTimeSpent" value="25141000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -353,16 +369,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="822">
-          <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
-          <folding>
-            <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -446,10 +452,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/includes/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+        <state relative-caret-position="102">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#section#0;n#section#0;n#!!top" expanded="true" />
           </folding>

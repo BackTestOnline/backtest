@@ -7,24 +7,25 @@ $user_ip = $_SERVER['REMOTE_ADDR'];
 if($user_ip == "::1" || $user_ip == "127.0.0.1") {
     if (isset($_SESSION['status'])) {
         $user_status = $_SESSION['status'];
-        if ($user_status == "premium") {
-            $logo = "images/BacktestOnline Premium.png";
-        } else if ($user_status == "free") {
-            $logo = "images/BacktestOnline Free.png";
+        //echo $user_status;
+        if ($user_status == "Premium") {
+            $logo = "images/BacktestOnline_premium.png";
+        } else if ($user_status == "Free") {
+            $logo = "images/BacktestOnline_free.png";
         }
     } else {
-        $logo = "images/BacktestOnline Web.png";
+        $logo = "images/BacktestOnline_web.png";
     }
 }else{
     if (isset($_SESSION['status'])) {
         $user_status = $_SESSION['status'];
-        if ($user_status == "premium") {
-            $logo = "/images/BacktestOnline Premium.png";
-        } else if ($user_status == "free") {
-            $logo = "/images/BacktestOnline Free.png";
+        if ($user_status == "Premium") {
+            $logo = "../images/BacktestOnline_premium.png";
+        } else if ($user_status == "Free") {
+            $logo = "../images/BacktestOnline_free.png";
         }
     } else {
-        $logo = "/images/BacktestOnline Web.png";
+        $logo = "../images/BacktestOnline Web.png";
     }
 }
 
