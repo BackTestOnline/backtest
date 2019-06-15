@@ -2,7 +2,7 @@
 include "db.php";
 include "functions.php";
 session_start();
-$root = "/";
+$img_root = "../../,,/";
 ?>
 <!DOCTYPE HTML>
 <!--
@@ -14,9 +14,9 @@ $root = "/";
 <head>
 <!--    <title>Backtest Online - Home of the B.O.S.S. Software</title>-->
     <meta charset="utf-8" />
-    <title>Backtest Online - Home of the B.O.S.S. Software</title>
+    <title>Backtest Online - Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
 </head>
 <body class="is-preload">
 
@@ -32,24 +32,12 @@ $root = "/";
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="about.php">About</a></li>
-<!--                <li><a href="#">Feugiat</a></li>-->
-<!--                <li><a href="#">Tempus</a></li>-->
-<!--                <li><a href="#">Adipiscing</a></li>-->
+                <li><a href="#">Posts</a></li>
+                <li><a href="#">Users</a></li>
+                <li><a href="../logout.php">LogOut</a></li>
             </ul>
         </nav>
-        <nav class="main">
-            <ul>
-                <li class="search">
-                    <a class="fa-search" href="#search">Search</a>
-                    <form id="search" method="get" action="#">
-                        <input type="text" name="query" placeholder="Search" />
-                    </form>
-                </li>
-                <li class="menu">
-                    <a class="fa-bars" href="#menu">Menu</a>
-                </li>
-            </ul>
-        </nav>
+
     </header>
 
     <?php include "navigation.php";?>

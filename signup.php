@@ -40,8 +40,10 @@ if(isset($_POST['submit'])) {
     $password = trim($password);
     $email = trim($email);
 
+
+
     //ecnrypts password for security
-    $password = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
+    $password = password_hash($password, PASSWORD_DEFAULT);
 
 //    die($password);
     //check if email exits
