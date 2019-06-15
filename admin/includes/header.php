@@ -31,9 +31,10 @@ $img_root = "../../,,/";
         <nav class="links">
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="#">Posts</a></li>
-                <li><a href="#">Users</a></li>
+                <li><a href="../admin">Dashboard</a></li>
+                <li><a href="../about.php">About</a></li>
+                <li><a href="posts.php">Posts</a></li>
+                <li><a href="users.php">Users</a></li>
                 <li><a href="../logout.php">LogOut</a></li>
             </ul>
         </nav>

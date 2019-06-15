@@ -32,6 +32,15 @@ $root = "/";
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="about.php">About</a></li>
+            <?php
+            if(isset($_SESSION['role'])){
+                if($_SESSION['role'] =="admin"){
+                    ?>
+                    <li><a href="admin">Admin</a></li>
+                <?php
+                }
+            }
+            ?>
 <!--                <li><a href="#">Feugiat</a></li>-->
 <!--                <li><a href="#">Tempus</a></li>-->
 <!--                <li><a href="#">Adipiscing</a></li>-->

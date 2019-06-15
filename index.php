@@ -1,6 +1,9 @@
 <?php
 
 include "includes/header.php";
+if(isset($_GET['res'])){
+    echo "<h1 style='text-align: center; color: red;'>YOu have been successfully logged out</h1>";
+}
 ?>
 
 

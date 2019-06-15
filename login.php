@@ -57,6 +57,14 @@ if(isset($_POST['login'])){
             $_SESSION['first_name'] = $db_user_firstname;
             $_SESSION['last_name'] = $db_user_lastname;
             $_SESSION['role'] = $db_user_role;
+            //update last login table
+            echo $last_login_query = "update last_logins set last_login = current_timestamp where user_id = '$db_user_id'";
+            $last_login = query($last_login_query);
+            if(!$last_login){
+                die("Error: ".mysqli_error($connection));
+            }else{
+                echo "query successful";
+            }
             header("Location: /");
         }else{
             echo "<h1>details incorrect</h1>";
