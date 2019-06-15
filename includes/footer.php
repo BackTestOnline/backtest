@@ -25,7 +25,7 @@ if($user_ip == "::1" || $user_ip == "127.0.0.1") {
             $logo = "../images/BacktestOnline_free.png";
         }
     } else {
-        $logo = "../images/BacktestOnline Web.png";
+        $logo = "../images/BacktestOnline_web.png";
     }
 }
 
