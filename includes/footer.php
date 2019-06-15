@@ -1,7 +1,7 @@
 </div>
 
 <?php
-
+//test
 global $logo;
 $user_ip = $_SERVER['REMOTE_ADDR'];
 if($user_ip == "::1" || $user_ip == "127.0.0.1") {
