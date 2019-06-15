@@ -3,15 +3,29 @@
 <?php
 
 global $logo;
-if(isset($_SESSION['status'])){
-    $user_status = $_SESSION['status'];
-    if($user_status == "premium"){
-        $logo = "/images/BacktestOnline Premium.png";
-    }else if($user_status == "free"){
-        $logo = "/images/BacktestOnline Free.png";
+$user_ip = $_SERVER['REMOTE_ADDR'];
+if($user_ip == "::1" || $user_ip == "127.0.0.1") {
+    if (isset($_SESSION['status'])) {
+        $user_status = $_SESSION['status'];
+        if ($user_status == "premium") {
+            $logo = "images/BacktestOnline Premium.png";
+        } else if ($user_status == "free") {
+            $logo = "images/BacktestOnline Free.png";
+        }
+    } else {
+        $logo = "images/BacktestOnline Web.png";
     }
 }else{
-    $logo = "/images/BacktestOnline Web.png";
+    if (isset($_SESSION['status'])) {
+        $user_status = $_SESSION['status'];
+        if ($user_status == "premium") {
+            $logo = "/images/BacktestOnline Premium.png";
+        } else if ($user_status == "free") {
+            $logo = "/images/BacktestOnline Free.png";
+        }
+    } else {
+        $logo = "/images/BacktestOnline Web.png";
+    }
 }
 
 //echo $logo
