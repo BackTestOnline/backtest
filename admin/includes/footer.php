@@ -35,7 +35,7 @@ if($user_ip == "::1" || $user_ip == "127.0.0.1") {
 
     <!-- Intro -->
     <section id="intro">
-        <a href="#"><img src="<?php echo $logo;?>" class="logo" alt="Backtest Logo" style=""></a>
+        <a href="/"><img src="<?php echo $logo;?>" class="logo" alt="Backtest Logo" style=""></a>
         <header>
 <!--            <h2>Backtest Online</h2>-->
             <h3>Home of the B.O.S.S. Software</h3>
