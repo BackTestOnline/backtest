@@ -9,38 +9,37 @@
     <section>
         <ul class="links">
             <li>
-                <a href="#">
-                    <h3>LINK 1</h3>
-                    <p>Feugiat tempus veroeros dolor</p>
+                <a href="/">
+                    <h3>Home</h3>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <h3>Dolor sit amet</h3>
-                    <p>Sed vitae justo condimentum</p>
+                <a href="about.php">
+                    <h3>About</h3>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <h3>Feugiat veroeros</h3>
-                    <p>Phasellus sed ultricies mi congue</p>
+                <a href="admin/">
+                    <h3>Admin</h3>
                 </a>
             </li>
-            <li>
+            <!--<li>
                 <a href="#">
                     <h3>Etiam sed consequat</h3>
-                    <p>Porta lectus amet ultricies</p>
                 </a>
-            </li>
+            </li>-->
         </ul>
     </section>
     <!-- Actions -->
     <section>
         <ul class='actions stacked' >
+            <?php if(!isset($_SESSION['email'])){?>
             <li ><a href = 'login.php' class='button large fit' > Log In </a ></li >
         <!--</ul >
         <ul class='actions stacked' >-->
+            <?php }else{ ?>
             <li ><a href = 'logout.php' class='button large fit' > Log Out </a ></li >
+            <?php }?>
         </ul >
     </section>
     <?php

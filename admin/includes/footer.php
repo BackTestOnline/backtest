@@ -1,14 +1,43 @@
 </div>
 
+<?php
+global $logo;
+$user_ip = $_SERVER['REMOTE_ADDR'];
+if($user_ip == "::1" || $user_ip == "127.0.0.1") {
+    if (isset($_SESSION['status'])) {
+        $user_status = $_SESSION['status'];
+        //echo $user_status;
+        if ($user_status == "Premium") {
+            $logo = "../images/BacktestOnline_premium.png";
+        } else if ($user_status == "Free") {
+            $logo = "../images/BacktestOnline_free.png";
+        }
+    } else {
+        $logo = "../images/BacktestOnline_web.png";
+    }
+}else{
+    if (isset($_SESSION['status'])) {
+        $user_status = $_SESSION['status'];
+        if ($user_status == "Premium") {
+            $logo = "../../../images/BacktestOnline_premium.png";
+        } else if ($user_status == "Free") {
+            $logo = "../../../images/BacktestOnline_free.png";
+        }
+    } else {
+        $logo = "../../../images/BacktestOnline_web.png";
+    }
+}
+
+?>
 
 <!-- Sidebar -->
 <section id="sidebar">
 
     <!-- Intro -->
     <section id="intro">
-        <a href="/" class="logo"><img src="images/logo.jpg" alt="" /></a>
+        <a href="#"><img src="<?php echo $logo;?>" class="logo" alt="Backtest Logo" style=""></a>
         <header>
-            <h2>Backtest Online</h2>
+<!--            <h2>Backtest Online</h2>-->
             <h3>Home of the B.O.S.S. Software</h3>
         </header>
     </section>
