@@ -1,4 +1,4 @@
-<section id="menu">
+<section id="admin_menu">
     <!-- Search -->
     <section>
         <form class="search" method="get" action="#">

@@ -33,21 +33,15 @@ $root = "/";
 
         <nav class="links">
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="about.php">About</a></li>
-            <?php
-            if(isset($_SESSION['role'])){
-                if($_SESSION['role'] =="admin"){
-                    ?>
-                    <li><a href="admin">Admin</a></li>
                 <?php
-                }
-            }
-            ?>
+                include "links.php";
+                ?>
+            </ul>
+
 <!--                <li><a href="#">Feugiat</a></li>-->
 <!--                <li><a href="#">Tempus</a></li>-->
 <!--                <li><a href="#">Adipiscing</a></li>-->
-            </ul>
+
         </nav>
         <nav class="main">
             <ul>

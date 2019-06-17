@@ -23,11 +23,14 @@
                     <h3>Admin</h3>
                 </a>
             </li>
-            <!--<li>
+            <li>
                 <a href="#">
                     <h3>Etiam sed consequat</h3>
                 </a>
-            </li>-->
+            </li>
+            <?php
+            //include "links.php";
+            ?>
         </ul>
     </section>
     <!-- Actions -->

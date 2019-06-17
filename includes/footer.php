@@ -45,10 +45,10 @@ if($user_ip == "::1" || $user_ip == "127.0.0.1") {
     </section>
 
     <!-- Mini Posts -->
-    <section>
+    <!--<section>
         <div class="mini-posts">
 
-            <!-- Mini Post -->
+
             <article class="mini-post">
                 <header>
                     <h3><a href="single.html">Vitae sed condimentum</a></h3>
@@ -58,7 +58,6 @@ if($user_ip == "::1" || $user_ip == "127.0.0.1") {
                 <a href="single.html" class="image"><img src="images/pic04.jpg" alt="" /></a>
             </article>
 
-            <!-- Mini Post -->
             <article class="mini-post">
                 <header>
                     <h3><a href="single.html">Rutrum neque accumsan</a></h3>
@@ -68,7 +67,7 @@ if($user_ip == "::1" || $user_ip == "127.0.0.1") {
                 <a href="single.html" class="image"><img src="images/pic05.jpg" alt="" /></a>
             </article>
 
-            <!-- Mini Post -->
+
             <article class="mini-post">
                 <header>
                     <h3><a href="single.html">Odio congue mattis</a></h3>
@@ -78,7 +77,7 @@ if($user_ip == "::1" || $user_ip == "127.0.0.1") {
                 <a href="single.html" class="image"><img src="images/pic06.jpg" alt="" /></a>
             </article>
 
-            <!-- Mini Post -->
+
             <article class="mini-post">
                 <header>
                     <h3><a href="single.html">Enim nisl veroeros</a></h3>
@@ -91,7 +90,6 @@ if($user_ip == "::1" || $user_ip == "127.0.0.1") {
         </div>
     </section>
 
-    <!-- Posts List -->
     <section>
         <ul class="posts">
             <li>
@@ -140,7 +138,7 @@ if($user_ip == "::1" || $user_ip == "127.0.0.1") {
                 </article>
             </li>
         </ul>
-    </section>
+    </section>-->
 
     <!-- About -->
     <section class="blurb">

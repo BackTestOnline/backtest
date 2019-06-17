@@ -45,4 +45,5 @@ echo " | Other Users: " . $other_role_count = count($other_users);
 
 ?>
 <!--posts dashboard chart-->
-<?php include"includes/footer.php";?>
+
+<?php include"../includes/footer.php";?>
