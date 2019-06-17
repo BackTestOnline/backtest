@@ -43,7 +43,52 @@ echo "Total Users: " . $user_count = mysqli_num_rows($user_res);
 echo " | Admin Users: " . $admin_role_count = count($admin_users);
 echo " | Other Users: " . $other_role_count = count($other_users);
 
+echo '<script>';
+echo 'var admin = ' . json_encode($admin_role_count) . ';';
+echo 'var user = ' . json_encode($user_count) . ';';
+echo 'var other = ' . json_encode($other_role_count) . ';';
+echo '</script>';
 ?>
+
+
+<div id="user_chart_div">
+    <h4 id="user_chart_title"><a href="users.php">User Dashboard</a></h4>
+    <div id="user_chart"></div>
+</div>
+
 <!--posts dashboard chart-->
 
-<?php include"../includes/footer.php";?>
+<?php include"includes/footer.php";?>
+
+<script>
+    var chart = AmCharts.makeChart("user_chart", {
+        "type": "serial",
+        "theme": "light",
+        "columnWidth": 0.8,
+        "dataProvider": [{
+            "category": "Admin",
+            "count": admin
+        }, {
+            "category": "Other",
+            "count": other
+        }, {
+            "category": "Total",
+            "count": user
+        }],
+        "graphs": [{
+            "fillColors": "#c55",
+            "fillAlphas": 0.9,
+            "lineColor": "#fff",
+            "lineAlpha": 0.7,
+            "type": "column",
+            "valueField": "count"
+        }],
+        "categoryField": "category",
+        "categoryAxis": {
+            "title": "User Type"
+        },
+        "valueAxes": [{
+            "title": ""
+        }]
+    });
+</script>

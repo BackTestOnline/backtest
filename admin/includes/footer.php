@@ -42,14 +42,14 @@ if($user_ip == "::1" || $user_ip == "127.0.0.1") {
         </header>
     </section>
 
-
+<?php include "includes/admin_side_links.php"?>
 
     <!-- About -->
     <section class="blurb">
         <h2>About</h2>
-        <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
+        <p>BacktestOnline is a family home run company project. <a href="../about.php">Read more about us here....</a></p>
         <ul class="actions">
-            <li><a href="#" class="button">Learn More</a></li>
+            <li><a href="../about.php" class="button">Learn More</a></li>
         </ul>
     </section>
 
@@ -75,6 +75,7 @@ if($user_ip == "::1" || $user_ip == "127.0.0.1") {
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+
 
 </body>
 </html>
