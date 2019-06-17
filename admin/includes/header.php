@@ -53,3 +53,6 @@ if(preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|c
 <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 <script src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
 <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+
+<!--ckeditor-->
+<script src="//cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
