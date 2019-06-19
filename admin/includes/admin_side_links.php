@@ -14,7 +14,10 @@
         echo "
         <ul class='actions stacked' >
             <li ><a href = '../debug.php' class='button large fit' > Session Debugging </a ></li >
-        </ul>";
+        </ul>
+        <!--<ul class='actions stacked' >
+            <li ><a href = 'database.php' class='button large fit' > Database Management </a ></li >
+        </ul>-->";
     }
     ?>
 </div>
