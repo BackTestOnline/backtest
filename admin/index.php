@@ -140,7 +140,7 @@ echo '<script>';
         }]
     });
 
-    var chart = AmCharts.makeChart("post_chart", {
+    var chart1 = AmCharts.makeChart("post_chart", {
         "type": "serial",
         "theme": "light",
         "columnWidth": 0.8,
