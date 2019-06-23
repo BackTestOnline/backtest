@@ -17,7 +17,7 @@ if(isset($_POST['add_post'])) {
     if (!empty($post_content)) {
         //insert into posrs
         $insert_query = "insert into posts (post_title,post_content,post_creator,post_category,post_image, post_status)";
-        $insert_query .= " values('$post_title','$post_content','$post_creator','$post_category','$post_image','post_status')";
+        $insert_query .= " values('$post_title','$post_content','$post_creator','$post_category','$post_image','$post_status')";
         $insert_post_res = query($insert_query);
         if (!$insert_post_res) {
             echo "<h1 style='text-align: center;color:red;'>Error creating post:" . mysqli_error($connection) . "</h1>";
