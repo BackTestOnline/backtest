@@ -73,7 +73,7 @@ echo "User Sel Query Successful";
 }*/
 
 while($row = mysqli_fetch_assoc($post_res)){
-    echo $post_status = $row['post_status'];
+    $post_status = $row['post_status'];
     if($post_status == "published"){
         $published_posts[] = $post_status;
     }else if($post_status == "draft"){

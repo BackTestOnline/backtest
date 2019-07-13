@@ -2,17 +2,61 @@
 
 include "includes/header.php";
 if(isset($_GET['res'])){
-    echo "<h1 style='text-align: center; color: red;'>YOu have been successfully logged out</h1>";
+    echo "<h1 style='text-align: center; color: red;'>You have been successfully logged out</h1>";
 }
+
+// get all the possts form the data base and display them in index. 
+//====== VIEWING RIGHTS =======//
+//->Admin - All posts, published and unpublished
+//->Standard - All Published Posts
+//->Editors - All Posts that they make, published and unpublished
+//->No Role - All Published Posts
+
+
+//get user role from session
+if(isset($_SESSION['role'])) {
+    $user_role = $_SESSION['role'];
+    $user_id = $_SESSION['user_id'];
+}
+
+//// get posts from backtest_web.posts, selecting appropriate posts for the user role
+if(isset($user_role)) {
+    if ($user_role == "admin") {
+        $query = "select * from posts";
+    } else if ($user_role == "editor") {
+        $query = "select * from posts where post_creator = '$user_id'";
+    } else {
+        $query = "select * from posts where post_status = 2";
+    }
+}else{
+    $query = "select * from posts where post_status = 2";
+}
+
+////queries the post table and gets results
+$post_array = query($query);
+//if($post_array)echo "Posts received: ".mysqli_num_rows($post_array);
+
+while($row = mysqli_fetch_assoc($post_array)){
+    $id = $row['post_id'];               //Post ID - integer
+    $creator = $row['post_creator'];     //Post Creator - integer
+    $title = $row['post_title'];         //Post Title - string
+    $content = $row['post_content'];     //Post Content - varchar
+    $views = $row['post_views'];         //Post Views - integer
+    $category = $row['post_category'];   //Post Category - integer
+    $image = $row['post_image'];         //Post Image - varchar [image name. not location]
+    $status = $row['post_status'];       //Post Status - integer (1 - draft, 2 - published, 5 - archived)
+	echo $title;
+}
+
 ?>
 
 
 
         <!-- Post -->
-        <article class="post">
+        <!--<article class="post">
             <header>
                 <div class="title">
-                    <h2><a href="single.html">Magna sed adipiscing</a></h2>
+                    <h2><a href="single.html">Magna sed TESTING</a></h2>
                     <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
                 </div>
                 <div class="meta">
@@ -34,7 +78,6 @@ if(isset($_GET['res'])){
             </footer>
         </article>
 
-        <!-- Post -->
         <article class="post">
             <header>
                 <div class="title">
@@ -60,7 +103,7 @@ if(isset($_GET['res'])){
             </footer>
         </article>
 
-        <!-- Post -->
+  
         <article class="post">
             <header>
                 <div class="title">
@@ -86,8 +129,7 @@ if(isset($_GET['res'])){
             </footer>
         </article>
 
-        <!-- Post -->
-
+        
             <article class="post">
                 <header>
                     <div class="title">
@@ -395,15 +437,15 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                     <p><span class="image left"><img src="images/pic07.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
                     <p><span class="image right"><img src="images/pic04.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
                 </section>
+            </article> -->
 
-            </article>
 
 
         <!-- Pagination -->
-        <ul class="actions pagination">
+       <!-- <ul class="actions pagination">
             <li><a href="" class="disabled button large previous">Previous Page</a></li>
             <li><a href="#" class="button large next">Next Page</a></li>
-        </ul>
+        </ul>-->
 
 
 
