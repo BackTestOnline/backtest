@@ -22,5 +22,10 @@
     </li>
 
     <li>
-        <a href="../logout.php"><h3>LogOut</h3></a></li>
+        <a href="../logout.php"><h3>LogOut</h3></a>
+    </li>
+
+    <li>
+        <a href="php_info.php"><h3>Php Info</h3></a>
+    </li>
 </ul>
