@@ -84,10 +84,11 @@ function login_user($username, $password){
     }
 }
 
+
 function send_email($to,$subject,$message){
     $mail =  new PHPMailer();
     $mail->isSMTP();
-    $mail->Host = "localhost";
+    $mail->Host = "n3plcpnl0143.prod.ams3.secureserver.net";
 //    $mail->Host = "localhost";
 //    $mail->SMTPAuth = false;
     $mail->Username = "support@backtestonline.com";
@@ -95,7 +96,7 @@ function send_email($to,$subject,$message){
 //    $mail->SMTPSecure = 'tls';
 //    $mail->Port = 587;
 //    $mail->SMTPAutoTLS = false;
-    $mail->Port = 25;
+    $mail->Port = 465;
     $mail->isHTML(true);
     $mail->CharSet = 'UTF-8';
 //    $mail->SMTPDebug = 2;
