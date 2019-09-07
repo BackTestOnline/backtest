@@ -15,7 +15,9 @@ if(isset($_POST['submit'])){
     if(add_user($_POST['user_email'],$password[0],$_POST['user_firstname'],$_POST['lastname'],$_POST['role'],"free")){
     $to = $_POST['user_email'];
     $subject = "Welcome to the Backtest Online System";
-    $message = "<h1>Welcome to BacktestOnline.</h1>
+    $message = "
+<!DOCTYPE html>
+<h1>Welcome to BacktestOnline.</h1>
 <br><br>
 You have been set up as an ".$_POST['role']." user on our system by ".$_SESSION['first_name']." ".$_SESSION['last_name'].".
 <br><br>Here is your username: ".$_POST['user_email']."
