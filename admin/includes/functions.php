@@ -94,7 +94,7 @@ function send_email($to,$subject,$message){
 //    $mail->Password = "5Zr6GgZrF7";
 //    $mail->SMTPSecure = 'starttls';
 //    $mail->Port = 587;
-    $mail->SMTPAutoTLS = false;
+    $mail->SMTPAutoTLS = true;
     $mail->Port = 25;
     $mail->isHTML(true);
     $mail->CharSet = 'UTF-8';
