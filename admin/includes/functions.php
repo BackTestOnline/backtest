@@ -1,4 +1,11 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../vendor/phpmailer/phpmailer/src/Exception.php';
+require '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require '../vendor/phpmailer/phpmailer/src/SMTP.php';
+
 
 function escape($str){
     global $connection;
@@ -75,5 +82,81 @@ function login_user($username, $password){
             header("Location: login.php?status=failed");
         }
     }
+}
+
+function send_email($to,$subject,$message){
+    $mail =  new PHPMailer();
+    $mail->isSMTP();
+    $mail->Host = "smtp.office365.com";
+    $mail->SMTPAuth = true;
+    $mail->Username = "help@backtestonline.com";
+    $mail->Password = "5Zr6GgZrF7";
+    $mail->SMTPSecure = 'starttls';
+    $mail->Port = 587;
+    $mail->isHTML(true);
+    $mail->CharSet = 'UTF-8';
+//    $mail->SMTPDebug = 2;
+
+    $mail->setFrom('support@backtestonline.com', 'Support');
+    $mail->addCC('support@backtestonline.com');
+    $mail->addAddress($to);
+    $mail->Subject =$subject;
+    $mail->Body = $message;
+
+    if($mail->send()){
+        return "True";
+    }else{
+        return $mail->ErrorInfo;
+    }
+}
+
+function randomPassword($length,$count, $characters) {
+    $symbols = array();
+    $passwords = array();
+    $used_symbols = '';
+    $pass = '';
+
+    $symbols["lower_case"] = 'abcdefghijklmnopqrstuvwxyz';
+    $symbols["upper_case"] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $symbols["numbers"] = '1234567890';
+    $symbols["special_symbols"] = '!?~@#-_+<>[]{}';
+
+    $characters = explode(",",$characters);
+    foreach ($characters as $key=>$value) {
+        $used_symbols .= $symbols[$value];
+    }
+    $symbols_length = strlen($used_symbols) - 1;
+    for ($p = 0; $p < $count; $p++) {
+        $pass = '';
+        for ($i = 0; $i < $length; $i++) {
+            $n = rand(0, $symbols_length);
+            $pass .= $used_symbols[$n];
+        }
+        $passwords[] = $pass;
+    }
+    return $passwords;
+}
+
+function add_user($email, $password, $first_name, $last_name, $role, $status){
+    /**
+     * Encrypt Password
+     */
+    global $connection;
+    $user_email = escape($email);
+    $user_password = escape(password_hash($password, PASSWORD_BCRYPT, array('cost' => 10)));
+    $user_first_name = escape($first_name);
+    $user_last_name = escape($last_name);
+    $role = escape($role);
+    $status = escape($status);
+
+    $new_user = query("insert into user (user_email, user_first_name, user_last_name, user_password, status, role, enabled) values ('$user_email','$user_first_name','$user_last_name','$user_password','$status','$role',1)");
+
+    if($new_user){
+        return true;
+    }else{
+        echo "failed: ".mysqli_error($connection);
+        return false;
+    }
+
 }
 ?>

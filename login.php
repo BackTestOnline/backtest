@@ -59,7 +59,13 @@ if(isset($_POST['login'])){
             $_SESSION['role'] = $db_user_role;
             $_SESSION['status'] = $db_status;
             //update last login table
-            echo $last_login_query = "update last_logins set last_login = current_timestamp where user_id = '$db_user_id'";
+            $last_login_count = query("select last_login from last_logins where user_id = '$db_user_id'");
+            if(mysqli_num_rows($last_login_count) === 0) {
+                $last_login_query = "insert into last_logins set user_id = '$db_user_id'";
+            }else{
+                echo $last_login_query = "update last_logins set last_login = current_timestamp where user_id = '$db_user_id'";
+            }
+//            echo $last_login_query = "update last_logins set last_login = current_timestamp where user_id = '$db_user_id'";
             $last_login = query($last_login_query);
             if(!$last_login){
                 die("Error: ".mysqli_error($connection));

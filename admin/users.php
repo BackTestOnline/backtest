@@ -81,12 +81,12 @@ echo '</script>';
 <table>
     <thead>
         <tr>
-            <th>User ID</th>
-            <th>Email</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Role</th>
-            <th>Status</th>
+            <th style="width: 20px">User ID</th>
+            <th style="width: 50px">Email</th>
+            <th style="width: 50px">First Name</th>
+            <th style="width: 50px">Last Name</th>
+            <th style="width: 30px">Role</th>
+            <th style="width: 30px">Status</th>
         </tr>
     </thead>
     <?php

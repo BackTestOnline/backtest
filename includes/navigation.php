@@ -23,11 +23,6 @@
                     <h3>Admin</h3>
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <h3>Etiam sed consequat</h3>
-                </a>
-            </li>
             <?php
             //include "links.php";
             ?>
