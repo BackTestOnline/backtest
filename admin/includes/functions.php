@@ -102,7 +102,7 @@ function send_email($to,$subject,$message){
 //    $mail->SMTPDebug = 2;
 
     $mail->setFrom('support@backtestonline.com', 'Support');
-    $mail->addCC('support@backtestonline.com');
+    $mail->addCC('web@backtestonline.com');
     $mail->addAddress($to);
     $mail->Subject =$subject;
     $mail->Body = $message;
