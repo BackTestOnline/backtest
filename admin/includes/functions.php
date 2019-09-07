@@ -87,15 +87,15 @@ function login_user($username, $password){
 function send_email($to,$subject,$message){
     $mail =  new PHPMailer();
     $mail->isSMTP();
-    $mail->Host = "relay-hosting.secureserver.net";
+    $mail->Host = "localhost";
 //    $mail->Host = "localhost";
 //    $mail->SMTPAuth = false;
-    $mail->Username = "help@backtestonline.com";
-    $mail->Password = "5Zr6GgZrF7";
-    $mail->SMTPSecure = 'tls';
-    $mail->Port = 587;
+    $mail->Username = "support@backtestonline.com";
+    $mail->Password = "B@ckt35t";
+//    $mail->SMTPSecure = 'tls';
+//    $mail->Port = 587;
 //    $mail->SMTPAutoTLS = false;
-//    $mail->Port = 25;
+    $mail->Port = 25;
     $mail->isHTML(true);
     $mail->CharSet = 'UTF-8';
 //    $mail->SMTPDebug = 2;
