@@ -96,7 +96,7 @@ function send_email($to,$subject,$message){
 //    $mail->SMTPSecure = 'tls';
 //    $mail->Port = 587;
 //    $mail->SMTPAutoTLS = false;
-    $mail->Port = 465;
+    $mail->Port = 587;
     $mail->isHTML(true);
     $mail->CharSet = 'UTF-8';
 //    $mail->SMTPDebug = 2;
