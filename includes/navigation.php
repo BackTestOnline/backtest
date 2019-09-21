@@ -28,13 +28,18 @@
 
                 <li>
                     <a href="changePassword.php">
-                        <h3>Reset Passsword</h3>
+                        <h3>Change Passsword</h3>
                     </a>
                 </li>
                 <?php
             }
             //include "links.php";
             ?>
+            <li>
+                <a href="requestReset.php">
+                    <h3>Reset Password</h3>
+                </a>
+            </li>
         </ul>
     </section>
     <!-- Actions -->
