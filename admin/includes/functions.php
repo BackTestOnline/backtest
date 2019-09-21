@@ -180,12 +180,21 @@ function newsletter($subject, $message){
     Below are a list of emails that failed to send the newsletter to:
     <br><br>
     <ul>";
-    foreach($failed as $fail){
-       $attach = "<li>".$fail."</li><br>";
-       $messageFailed .= $attach;
+    if(isset($failed)) {
+        foreach ($failed as $fail) {
+            $attach = "<li>" . $fail . "</li><br>";
+            $messageFailed .= $attach;
+        }
+    }else{
+        $messageFailed .= "<li>No Failed Emails</li>";
     }
     $messageFailed .= "</ul>";
     $title = "Newletter: ".$subject;
-    send_email("admin@backtestonline.com",$title, $messageFailed);
+    $news = send_email("admin@backtestonline.com",$title, $messageFailed);
+    if($news){
+        echo "<h3>Newsletter sent correctly.</h3>";
+    }else{
+        echo "<h3>Error sending: ".$news."</h3>";
+    }
 }
 ?>

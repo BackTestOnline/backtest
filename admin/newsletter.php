@@ -26,7 +26,7 @@ if(isset($_GET['stat'])&&$_GET['stat']=="fail"){
 <h1>Send Newsletter:</h1>
 
 <div id="form-post">
-    <form action="create_post.php" method="post" enctype="multipart/form-data">
+    <form action="" method="post" enctype="multipart/form-data">
 
         <div id="form-field">
             <label for="title">Title:</label>
