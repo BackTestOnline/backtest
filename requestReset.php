@@ -15,14 +15,14 @@ if(isset($_POST['submit'])){
         $tokenArr = randomPassword($length,1,"lower_case,upper_case,numbers");
         $token = $tokenArr[0];
         query("update user set reset_token = '$token' where user_email = '$email'");
-
+        $link = "www.backtestonline.com/reset.php?token=".$token;
         $message = "<h1>Reset Your Password.</h1>
-<br><br>
 ".$firstname.",
 <br><br>
 Thank you for requesting to reset your password.
 <br>Please follow the below link to reset your password.
-<br> <a href='www.backtestonline.com/reset.php?token=".$token."'>Reset Password</a>
+<br><br>
+<a href='$link'>Reset Password</a>
 <br><br>
 If you did not request this email, you can disregard it.
 <br>
