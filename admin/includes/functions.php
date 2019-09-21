@@ -163,4 +163,29 @@ function add_user($email, $password, $first_name, $last_name, $role, $status){
     }
 
 }
+
+function newsletter($subject, $message){
+    $users = query("select user_email from user where enabled = 1");
+    while($row = mysqli_fetch_assoc($users)){
+        $emails[] = $row['user_email'];
+    }
+    foreach($emails as $email){
+        $send = send_email($email,$subject,$message);
+        if(!$send){
+            $failed[] = $email;
+        }
+    }
+    $messageFailed = "Newsletter [".$subject."] sent successfully.
+    <br><br>
+    Below are a list of emails that failed to send the newsletter to:
+    <br><br>
+    <ul>";
+    foreach($failed as $fail){
+       $attach = "<li>".$fail."</li><br>";
+       $messageFailed .= $attach;
+    }
+    $messageFailed .= "</ul>";
+    $title = "Newletter: ".$subject;
+    send_email("admin@backtestonline.com",$title, $messageFailed);
+}
 ?>

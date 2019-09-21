@@ -7,6 +7,7 @@
     <a href="create_user.php">Create User</a>
     <a href="users.php">Manage Users</a>
     <a href="categories.php">Manage Categories</a>
+    <a href="newsletter.php">Send Public Email</a>
 
     <?php
     $user_ip = $_SERVER['REMOTE_ADDR'];
@@ -21,3 +22,7 @@
     }
     ?>
 </div>
+
+<style>
+
+</style>
