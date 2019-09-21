@@ -13,7 +13,7 @@ if(isset($_GET['res'])){
 
 if(isset($_GET['status'])){
     if($_GET['status'] === 'failed'){
-        $message = "Incorrect sign in details. Please Try again or contact <a href='mailto:jon.james@backtestonline.com'>jon.james@backtestonline.com</a>";
+        $message = "Incorrect sign in details. Please Try again or contact <a href='mailto:support@backtestonline.com'>support@backtestonline.com</a>";
     }
 }
 

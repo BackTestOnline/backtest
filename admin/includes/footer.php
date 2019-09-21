@@ -8,7 +8,7 @@ if($user_ip == "::1" || $user_ip == "127.0.0.1") {
         $user_status = $_SESSION['status'];
         $user_role = $_SESSION['role'];
         //echo $user_status;
-        if ($user_status == "Premium" || $user_role == "admin") {
+        if ($user_status == "Premium" || $user_role == "admin" || $user_role == "Admin" ) {
             $logo = "../images/BacktestOnline_premium.png";
         } else if ($user_status == "Free") {
             $logo = "../images/BacktestOnline_free.png";
@@ -20,7 +20,7 @@ if($user_ip == "::1" || $user_ip == "127.0.0.1") {
     if (isset($_SESSION['status'])) {
         $user_status = $_SESSION['status'];
         $user_role = $_SESSION['role'];
-        if ($user_status == "Premium" || $user_role == "admin") {
+        if ($user_status == "Premium" || $user_role == "admin" || $user_role == "Admin" ) {
             $logo = "../../../images/BacktestOnline_premium.png";
         } else if ($user_status == "Free") {
             $logo = "../../../images/BacktestOnline_free.png";

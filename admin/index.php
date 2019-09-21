@@ -1,6 +1,6 @@
 <?php
 include "includes/header.php";
-if(!isset($_SESSION['role']) || $_SESSION['role'] != "admin"){
+if(!isset($_SESSION['role']) || ($_SESSION['role'] != "admin" && $_SESSION['role'] != "Admin")){
     header("Location: /");
 }
 $user_id = $_SESSION['user_id'];
@@ -33,7 +33,7 @@ if(!$user_res){
 
 while($row = mysqli_fetch_assoc($user_res)){
     $user_role = $row['role'];
-    if($user_role == "admin"){
+    if($user_role == "admin" || $user_role == "Admin"){
         $admin_users[] = $user_role;
     }else{
         $other_users[] = $user_role;

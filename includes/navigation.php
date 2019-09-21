@@ -18,12 +18,21 @@
                     <h3>About</h3>
                 </a>
             </li>
+
+            <?php if(isset($_SESSION['user_id'])){?>
             <li>
                 <a href="admin/">
                     <h3>Admin</h3>
                 </a>
             </li>
-            <?php
+
+                <li>
+                    <a href="changePassword.php">
+                        <h3>Reset Passsword</h3>
+                    </a>
+                </li>
+                <?php
+            }
             //include "links.php";
             ?>
         </ul>
