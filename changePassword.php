@@ -1,6 +1,10 @@
 <?php
 include "includes/header.php";
 
+if(!isset($_SESSION['user_id'])){
+    header("Location: /");
+}
+
 if(isset($_POST['submit'])){
 
     //cehcks if teh old password is the currently stored one
