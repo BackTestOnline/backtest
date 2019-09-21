@@ -120,7 +120,7 @@ if(isset($_POST['login'])){
 								</form>
 
 							</div><!-- Body-->
-
+<h3><b>NOTE:</b> At this current time BacktestOnline Accounts are only able to be set up by admins. If you would like to become a user on our system then Please Contact <a href="mailto:support@backtestonline.com">support@backtestonline.com</a> with why you would like to be a member.</h3>
 						</div>
 					</div>
 				</div>
