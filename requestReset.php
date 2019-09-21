@@ -30,6 +30,8 @@ If you beleive someone is trying to gain access to your account, please contact 
         $send = send_email($email, "Password Reset", $message);
         if($send){
             echo "Request Sent.";
+            $_SESSION['res'] = "Sent";
+            header("Location: login.php");
         }else{
             echo $send;
         }

@@ -17,6 +17,12 @@ if(isset($_GET['status'])){
     }
 }
 
+if(isset($_SESSION['res'])){
+    if($_SESSION['res'] == "Sent"){
+        echo "<h3 style='text-align: center'>Request Sent. Please check your email.</h3>";
+    }
+}
+
 if(isset($_POST['login'])){
     $email = $_POST['username'];
     $password = $_POST['password'];
