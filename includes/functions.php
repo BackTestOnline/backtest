@@ -1,4 +1,33 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/phpmailer/phpmailer/src/Exception.php';
+require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require 'vendor/phpmailer/phpmailer/src/SMTP.php';
+
+function send_email($to,$subject,$message){
+    $mail =  new PHPMailer();
+    $mail->isSMTP();
+    $mail->Host = "n3plcpnl0143.prod.ams3.secureserver.net";
+    $mail->Username = "support@backtestonline.com";
+    $mail->Password = "B@ckt35t";
+    $mail->Port = 587;
+    $mail->isHTML(true);
+    $mail->CharSet = 'UTF-8';
+
+    $mail->setFrom('support@backtestonline.com', 'Support');
+    $mail->addCC('web@backtestonline.com');
+    $mail->addAddress($to);
+    $mail->Subject =$subject;
+    $mail->Body = $message;
+
+    if($mail->send()){
+        return "True";
+    }else{
+        return $mail->ErrorInfo;
+    }
+}
 
 function escape($str){
     global $connection;
@@ -75,5 +104,32 @@ function login_user($username, $password){
             header("Location: login.php?status=failed");
         }
     }
+}
+
+function randomPassword($length,$count, $characters) {
+    $symbols = array();
+    $passwords = array();
+    $used_symbols = '';
+    $pass = '';
+
+    $symbols["lower_case"] = 'abcdefghijklmnopqrstuvwxyz';
+    $symbols["upper_case"] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $symbols["numbers"] = '1234567890';
+    $symbols["special_symbols"] = '!?~@#-_+<>[]{}';
+
+    $characters = explode(",",$characters);
+    foreach ($characters as $key=>$value) {
+        $used_symbols .= $symbols[$value];
+    }
+    $symbols_length = strlen($used_symbols) - 1;
+    for ($p = 0; $p < $count; $p++) {
+        $pass = '';
+        for ($i = 0; $i < $length; $i++) {
+            $n = rand(0, $symbols_length);
+            $pass .= $used_symbols[$n];
+        }
+        $passwords[] = $pass;
+    }
+    return $passwords;
 }
 ?>

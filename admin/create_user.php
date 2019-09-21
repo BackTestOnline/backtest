@@ -19,10 +19,13 @@ if(isset($_POST['submit'])){
 <!DOCTYPE html>
 <h1>Welcome to BacktestOnline.</h1>
 <br><br>
+".$_POST['user_firstname'].",
+<br><br>
 You have been set up as an ".$_POST['role']." user on our system by ".$_SESSION['first_name']." ".$_SESSION['last_name'].".
 <br><br>Here is your username: ".$_POST['user_email']."
 <br><br>Please find below your password to log into the system.
 <br><br>Password: ".$password[0]."
+<br><br>When you log in for the first time please change your password by going to the following page: <a href='www.backtestonline.com/changePassword.php'>Change Password</a>.
 <br><br><br>
 Please Respect others when using our system!";
     $mail = send_email($to,$subject,$message);
