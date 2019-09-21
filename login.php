@@ -3,8 +3,6 @@ include "includes/header.php";
 //  include "includes/navigation.php";
 //echo $status = session_status();
 
-$message= "";
-
 if(isset($_GET['res'])){
     if($_GET['res'] == 'true'){
         $message = "User Added Successfully. Please sign in with details provided";
@@ -19,7 +17,9 @@ if(isset($_GET['status'])){
 
 if(isset($_SESSION['res'])){
     if($_SESSION['res'] == "Sent"){
-        echo "<h3 style='text-align: center'>Request Sent. Please check your email.</h3>";
+        $message = "<h3 style='text-align: center'>Request Sent. Please check your email.</h3>";
+    }else if($_SESSION['res'] == "reset"){
+        $message = "<h3 style='color:green; text-align: center;'>Password Reset. Please Log in</h3>";
     }
 }
 
@@ -99,7 +99,7 @@ if(isset($_POST['login'])){
 
 							<h3><i class="fa fa-user fa-4x"></i></h3>
 							<h2 class="text-center">Login</h2>
-                            <h1 id="message"><?php echo $message;?></h1>
+                            <h1 id="message"><?php if(isset($message)){echo $message;}?></h1>
 							<div class="panel-body">
 
 
@@ -126,7 +126,7 @@ if(isset($_POST['login'])){
 								</form>
 
 							</div><!-- Body-->
-<h3><b>NOTE:</b> At this current time BacktestOnline Accounts are only able to be set up by admins. If you would like to become a user on our system then Please Contact <a href="mailto:support@backtestonline.com">support@backtestonline.com</a> with why you would like to be a member.</h3>
+<p><b>NOTE:</b> At this current time BacktestOnline Accounts are only able to be set up by admins. If you would like to become a user on our system then Please Contact <a href="mailto:support@backtestonline.com">support@backtestonline.com</a> with why you would like to be a member.</>
 						</div>
 					</div>
 				</div>

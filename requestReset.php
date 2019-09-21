@@ -24,6 +24,10 @@ Thank you for requesting to reset your password.
 <br><br>
 <a href='$link'>Reset Password</a>
 <br><br>
+Or Copy and Paste the below link into your browser:
+<br><br>
+".$link."
+<br><br>
 If you did not request this email, you can disregard it.
 <br>
 If you beleive someone is trying to gain access to your account, please contact <a href='mailto:support@backtestonline.com'>support@backtestonline.com</a>";
@@ -40,9 +44,9 @@ If you beleive someone is trying to gain access to your account, please contact 
 
 ?>
 
-<div style="width:100%">
-    <div style="text-align: center; font-size: 4em"><span class="fa fa-user"></span></div>
-    <div style="font-size: 2em; text-align: center; font-weight: bold">Request Password Reset</div>
+<div style="width:100%; text-align: center">
+    <h3><i class="fa fa-user fa-4x"></i></h3>
+    <h2 class="text-center">Reset Password</h2>
     <div style="text-align: center;">To request a password reset please enter your email address below and if its on our system you will receive a password reset link.</div>
 </div>
     <br>
