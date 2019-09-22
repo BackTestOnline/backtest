@@ -3,6 +3,7 @@
 
     <li><a href="/"><h3>Home</h3></a></li>
     <li><a href="about.php"><h3>About</h3></a></li>
+    <li><a href="contact.php"><h3>Contact Us</h3></a></li>
     <?php
     if(isset($_SESSION['role'])){
         if($_SESSION['role'] =="admin" || $_SESSION['role'] =="Admin"){

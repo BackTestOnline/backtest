@@ -29,6 +29,29 @@ function send_email($to,$subject,$message){
     }
 }
 
+function send_support($user, $name,$subject,$message){
+    $mail =  new PHPMailer();
+    $mail->isSMTP();
+    $mail->Host = "n3plcpnl0143.prod.ams3.secureserver.net";
+    $mail->Username = "support@backtestonline.com";
+    $mail->Password = "B@ckt35t";
+    $mail->Port = 587;
+    $mail->isHTML(true);
+    $mail->CharSet = 'UTF-8';
+
+    $mail->setFrom($user, $name);
+    $mail->addCC('web@backtestonline.com');
+    $mail->addAddress("support@backtestonline.com");
+    $mail->Subject =$subject;
+    $mail->Body = $message;
+
+    if($mail->send()){
+        return "True";
+    }else{
+        return $mail->ErrorInfo;
+    }
+}
+
 function escape($str){
     global $connection;
     $result = mysqli_real_escape_string($connection, $str);

@@ -26,27 +26,31 @@ if(isset($user_role)) {
     if ($user_role == "admin") {
         $query = "select * from posts as p
 left join user as u
-on p.post_creator = u.id";
+on p.post_creator = u.id
+order by post_id desc";
 
     } else if ($user_role == "editor") {
         $query = "select * from posts as p
 left join user as u
 on p.post_creator = u.id
-where post_creator = '$user_id'";
+where post_creator = '$user_id'
+order by post_id desc";
     }
 
     else {
         $query = "select * from posts as p
 left join user as u
 on p.post_creator = u.id
-where post_status = 2";
+where post_status = 2
+order by post_id desc";
     }
 
 }else{
     $query = "select * from posts as p
 left join user as u
 on p.post_creator = u.id
-where post_status = 2";
+where post_status = 2
+order by post_id desc";
 }
 
 ////queries the post table and gets results
